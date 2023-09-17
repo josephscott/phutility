@@ -1,0 +1,20 @@
+{
+	"name": "josephscott/phutility",
+	"description": "PHP utilities",
+	"license": "MIT",
+	"require": {
+		"php": ">=8.2.0"
+	},
+	"require-dev": {
+		"phpstan/phpstan": "^1.10",
+		"pestphp/pest": "^2.18"
+	},
+	"autoload": {
+		"classmap": [
+			"src/percentiles.php"
+		]
+	},
+	"config": {
+		"classmap-authoritative": true
+	}
+}
