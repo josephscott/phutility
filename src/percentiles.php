@@ -10,7 +10,8 @@ class Percentiles {
 	}
 
 	public function get_percentile( int $percentile ) {
-		$index = ( $percentile / 100 ) * ( count( $this->numbers ) - 1 );
+		$index = ( $percentile / 100 ) * count( $this->numbers );
+		$index = floor( $index );
 		return $this->numbers[$index];
 	}
 }
