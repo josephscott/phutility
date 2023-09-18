@@ -10,7 +10,7 @@ class Percentiles {
 	}
 
 	public function get_percentile( int $percentile, string $method = 'rank'  ) {
-		if ( $method !== 'rank' ) {
+		if ( $method === 'interpolated' ) {
 			$index = ( $percentile / 100 ) * ( count( $this->numbers ) - 1 );
 			$lower = floor( $index );
 			$remainder = $index - $lower;
