@@ -15,26 +15,28 @@ class NumberSeries {
 		$this->numbers = $numbers;
 	}
 
-	public function get_percentile( int $percentile, string $method = 'rank'  ): int|float {
-		if ( $method === 'interpolated' ) {
-			$index = ( $percentile / 100 ) * ( count( $this->numbers ) - 1 );
-			$lower = floor( $index );
-			$remainder = $index - $lower;
+	public function interpolated_percentile( float $percentile ) : int|float {
+		$index = $percentile * ( count( $this->numbers ) - 1 );
+		$lower = floor( $index );
+		$remainder = $index - $lower;
 
-			$interp = $this->numbers[$lower];
-			if ( isset( $this->numbers[$lower + 1] ) ) {
-				$interp = $this->numbers[$lower] + (
-					$remainder * (
-						$this->numbers[$lower + 1] - $this->numbers[$lower]
-					)
-				);
-			}
-
-			return $interp;
+		$answer = $this->numbers[$lower];
+		if ( isset( $this->numbers[$lower + 1] ) ) {
+			$answer = $this->numbers[$lower] + (
+				$remainder * (
+					$this->numbers[$lower + 1] - $this->numbers[$lower]
+				)
+			);
 		}
 
-		$index = ( $percentile / 100 ) * count( $this->numbers );
+		return $answer;
+	}
+
+	public function ranked_percentile( float $percentile ) : int|float {
+		$index = $percentile * count( $this->numbers );
 		$index = floor( $index );
-		return $this->numbers[$index];
+		$answer = $this->numbers[$index];
+
+		return $answer;
 	}
 }
