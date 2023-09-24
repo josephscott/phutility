@@ -2,14 +2,20 @@
 declare( strict_types = 1 );
 
 class NumberSeries {
+	/**
+	 * @var array<int> $numbers
+	 */
 	private array $numbers = [];
 
+	/**
+	 * @param array<int> $numbers
+	 */
 	public function __construct( array $numbers ) {
 		sort( $numbers );
 		$this->numbers = $numbers;
 	}
 
-	public function get_percentile( int $percentile, string $method = 'rank'  ) {
+	public function get_percentile( int $percentile, string $method = 'rank'  ): int|float {
 		if ( $method === 'interpolated' ) {
 			$index = ( $percentile / 100 ) * ( count( $this->numbers ) - 1 );
 			$lower = floor( $index );
