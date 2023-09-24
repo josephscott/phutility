@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-class Percentiles {
+class NumberSeries {
 	private array $numbers = [];
 
 	public function __construct( array $numbers ) {
