@@ -11,7 +11,7 @@
 	},
 	"autoload": {
 		"classmap": [
-			"src/percentiles.php"
+			"src/numberseries.php"
 		]
 	},
 	"config": {
