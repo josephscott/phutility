@@ -37,6 +37,15 @@ class NumberSeries {
 		return $answer;
 	}
 
+	public function max() : int|float {
+		$last = array_key_last( $this->numbers );
+		return $this->numbers[$last];
+	}
+
+	public function min() : int|float {
+		return $this->numbers[0];
+	}
+
 	public function ranked_percentile( float $percentile ) : int|float {
 		$index = $percentile * count( $this->numbers );
 		$index = floor( $index );
