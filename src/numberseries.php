@@ -11,7 +11,7 @@ class NumberSeries {
 	 * @param array<int> $numbers
 	 */
 	public function __construct( array $numbers ) {
-		sort( $numbers );
+		sort( $numbers, SORT_NUMERIC );
 		$this->numbers = $numbers;
 	}
 
