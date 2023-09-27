@@ -15,6 +15,11 @@ class NumberSeries {
 		$this->numbers = $numbers;
 	}
 
+	public function average() : int|float {
+		$average = array_sum( $this->numbers ) / count( $this->numbers );
+		return $average;
+	}
+
 	public function interpolated_percentile( float $percentile ) : int|float {
 		$index = $percentile * ( count( $this->numbers ) - 1 );
 		$lower = floor( $index );

@@ -72,3 +72,11 @@ test( '23 random integers, ranked', function() {
 	expect( $result )->toBeInt();
 	expect( $result )->toBe( 95 );
 } );
+
+test( '23 random integers, average', function() {
+	$numbers = new NumberSeries( [ 90, 2, 18, 39, 66, 22, 44, 95, 31, 36, 81, 59, 72, 44, 64, 17, 33, 70, 86, 37, 85, 74, 48 ] );
+
+	$result = $numbers->average();
+	expect( $result )->toBeFloat();
+	expect( $result )->toBe( 52.73913043478261 );
+} );
