@@ -7,7 +7,8 @@
 	},
 	"require-dev": {
 		"phpstan/phpstan": "^1.10",
-		"pestphp/pest": "^2.18"
+		"pestphp/pest": "^2.18",
+		"friendsofphp/php-cs-fixer": "^3.34"
 	},
 	"autoload": {
 		"classmap": [

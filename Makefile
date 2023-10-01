@@ -2,7 +2,14 @@ SHELL = bash
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: lint phpstan pest
+all: code-format lint phpstan pest
+
+.PHONY: code-format
+code-format:
+	@echo
+	@echo "--> PHP CS Fixer"
+	vendor/bin/php-cs-fixer fix -v
+	@echo
 
 .PHONY: lint
 lint:
