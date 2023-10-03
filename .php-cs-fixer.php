@@ -170,4 +170,5 @@ return (new Config)
 	->setFinder( $finder )
 	->setRules( $rules )
 	->setRiskyAllowed( true )
+	->setIndent( "\t" )
 	->setUsingCache( false );
