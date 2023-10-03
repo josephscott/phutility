@@ -48,6 +48,11 @@ class numberseries {
 		return $this->numbers[0];
 	}
 
+	public function range() : int|float {
+		$range = $this->max() - $this->min();
+		return $range;
+	}
+
 	public function ranked_percentile( float $percentile ) : int|float {
 		$index = $percentile * count( $this->numbers );
 		$index = floor( $index );
