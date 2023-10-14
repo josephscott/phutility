@@ -21,6 +21,22 @@ class numberseries {
 		return $average;
 	}
 
+	/**
+	 * @return array<int|float>
+	 */
+	public function frequency() : array {
+		$matches = [];
+		foreach ( $this->numbers as $num ) {
+			if ( isset( $matches[$num] ) ) {
+				$matches[$num]++;
+			} else {
+				$matches[$num] = 1;
+			}
+		}
+
+		return $matches;
+	}
+
 	public function interpolated_percentile( float $percentile ) : int|float {
 		$index = $percentile * ( count( $this->numbers ) - 1 );
 		$lower = floor( $index );
