@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-class numberseries {
+class NumberSeries {
 	/**
 	 * @var array<int>
 	 */
