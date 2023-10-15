@@ -40,7 +40,9 @@ $rules = [
 		'spacing' => 'none',
 	],
 	'constant_case' => ['case' => 'lower'],
-	'declare_equal_normalize' => true,
+	'declare_equal_normalize' => [
+		'space' => 'single',
+	],
 	'elseif' => true,
 	'encoding' => true,
 	'full_opening_tag' => true,
@@ -157,10 +159,17 @@ $rules = [
 		'elements' => ['method', 'property'],
 	],
 	'whitespace_after_comma_in_array' => true,
-	];
+
+
+	'single_line_empty_body' => true,
+	'octal_notation' => true,
+];
 
 $finder = Finder::create()
-	->in( [ __DIR__ . '/src', ] )
+	->in( [
+		__DIR__ . '/src',
+#		__DIR__ . '/tests',
+	] )
 	->name( '*.php' )
 #	->notName('*.blade.php')
 	->ignoreDotFiles( true )
