@@ -24,16 +24,9 @@ class NumberSeries {
 	/**
 	 * @return array<int|float>
 	 */
-	public function frequency() : array {
-		$matches = [];
-		foreach ( $this->numbers as $num ) {
-			if ( isset( $matches[$num] ) ) {
-				$matches[$num]++;
-			} else {
-				$matches[$num] = 1;
-			}
-		}
-
+	public function frequencies() : array {
+		$matches = array_count_values( $this->numbers );
+		arsort( $matches );
 		return $matches;
 	}
 

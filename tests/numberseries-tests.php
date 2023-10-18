@@ -105,10 +105,10 @@ test( '23 random integers, range', function() {
 	expect( $result )->toBe( 93 );
 } );
 
-test( '23 integers, frequency', function() {
+test( '23 integers, frequencies', function() {
 	$numbers = new NumberSeries( [ 90, 2, 44, 2, 17, 17, 44, 44, 17, 17, 44, 17, 17, 44, 44, 17, 33, 17, 44, 37, 17, 74, 44 ] );
 
-	$result = $numbers->frequency();
+	$result = $numbers->frequencies();
 	expect( $result )->toBeArray();
 	expect( $result )->toMatchArray( [
 		2 => 2,
